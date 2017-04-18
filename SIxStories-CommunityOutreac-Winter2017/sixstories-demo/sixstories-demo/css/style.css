@@ -1,0 +1,16 @@
+
+body {
+	/*background-color: #FBEFF4;*/
+	background-image: url("../media/2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	color: white;
+	width: 100%;
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}

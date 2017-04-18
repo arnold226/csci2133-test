@@ -1,0 +1,83 @@
+<!doctype html>
+<style>
+    .parallax {
+        /* The image used */
+        background-color: #708090;
+
+        /* Set a specific height */
+        height: 720px;
+        width: auto;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        z-index:0;
+    }
+    .content {
+       margin-top: 80%;
+        position:relative;
+        z-index:1;
+        height:50%;    /* this height difference allows the bg to show through */
+
+    }
+   .content2{
+        position: fixed;
+       left: 15%;
+        z-index:10;
+        height:25%;
+    }
+</style>
+
+<!-- Container element -->
+<body>
+<div class="parallax">
+    <div class ="content"><img src ="img/img1.png"width="500px"></div>
+    <div class ="content"><img src ="img/img2.png"width="500px"></div>
+    <div class ="content"><img src ="img/img3.png"width="500px"></div>
+    <div class ="content"><img src ="img/img4.png"width="500px"></div>
+    <div class ="content"><img src ="img/img5.png"width="500px"></div>
+    <div class ="content"><img src ="img/img6.png"width="500px"></div>
+      <!--  <div class = "content2"><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/170px-Stick_Figure.svg.png" height ="256px"></div> -->
+
+</body>
+
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src='js/jquery.mousewheel.min.js'></script>
+<!--<script type='text/javascript' src='js/noframework.waypoints.min.js'></script>-->
+<!--<script type='text/javascript' src='js/notify.min.js'></script>-->
+<!--<script type='text/javascript' src='js/app.js'></script>-->
+
+
+<script>
+    $(function() {
+        $(".parallax").wrapInner("<table cellspacing='20'><tr>");
+        $(".content").wrap("<td></td>");
+        $(".content2").wrap("<td></td>");
+        $(".parallax").mousewheel(function(event, delta) {
+
+            this.scrollLeft -= (delta * 25);
+
+            event.preventDefault();
+
+        });
+
+
+    });
+	
+	//var waypoint = new Waypoint({
+	//	element: document.getElementById('horizontal-waypoint'),
+	//	handler: function(direction) {
+	//		$.notify('Horizontal waypoint triggered in the ' + direction + ' direction')
+			//console.log('Horizontal waypoint triggered in the ' + direction + ' direction')
+	//	},
+	//	context: document.getElementById('overflow-scroll'),
+	//	horizontal: true
+	//});
+</script>
+
+</html>
